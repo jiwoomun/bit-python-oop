@@ -26,14 +26,14 @@ class Bmi(object):
             bmi = '과체중'
         elif index >= 18.5:
             bmi = '정상'
-        else
+        else:
             bmi = '저체중'
         return bmi
 
     @staticmethod
     def main():
         b = Bmi(int(input('키 입력(cm)')), int(input('몸무게 입력(kg)')))
+        print(f'bmi:{b.bmi()}')
+        print(f'비만도:{b.get_bmi()}')
 
-
-    """
-    최소한의 코드로 최고의 퍼포먼스를 뽑아내는 것"""
+Bmi.main()
