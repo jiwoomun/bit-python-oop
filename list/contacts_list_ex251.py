@@ -17,7 +17,7 @@ class Contacts(object):
     def main():
         ls =[]
         while 1:
-            menu = input('0.EXIT 1.입력 2.출력')
+            menu = input('0.EXIT 1.입력 2.출력 3.삭제 4.수정')
             if menu == '0':
                 break
 
@@ -28,7 +28,18 @@ class Contacts(object):
                 for i in ls:
                     print(f'출력결과:{i.get_contact()}')
 
-            else:
+            elif menu == '3':
+                del_name = input('삭제할 이름:')
+                for i, j in enumerate(ls):
+                    if j.name == del_name:
+                        del ls[i]
+                    pass
+
+            elif menu == '4':
+                edit_name = input('수정할 이름:')
+                edit_info = Contacts(edit_name, input('수정 전화번호'), input('수정 이메일'))
+
+           else:
                 print('잘못된 주문입니다.')
                 continue
 
