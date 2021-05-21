@@ -22,7 +22,7 @@ class Contacts(object):
                 break
 
             elif menu == '1':
-                ls.append(Contacts(input('이름:'), input('전화번호'), input('이메일'), input('주소')))
+                ls.append(Contacts(input('이름'), input('전화번호'), input('이메일'), input('주소')))
 
             elif menu == '2':
                 for i in ls:
@@ -33,13 +33,15 @@ class Contacts(object):
                 for i, j in enumerate(ls):
                     if j.name == del_name:
                         del ls[i]
-                    pass
 
             elif menu == '4':
                 edit_name = input('수정할 이름:')
-                edit_info = Contacts(edit_name, input('수정 전화번호'), input('수정 이메일'))
-
-           else:
+                edit_info = Contacts(edit_name, input('수정 전화번호'), input('수정 이메일'), input('수정 주소'))
+                for i, j in enumerate(ls):
+                    if j.name == edit_name:
+                        del ls[i]
+                        ls.append(edit_info)
+            else:
                 print('잘못된 주문입니다.')
                 continue
 
